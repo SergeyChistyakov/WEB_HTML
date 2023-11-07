@@ -6,5 +6,3 @@
 ### https://sergeychistyakov.github.io/WEB_HTML/js_dom.html
 
 ### https://sergeychistyakov.github.io/WEB_HTML/passport_find_edit.html
-
-### https://sergeychistyakov.github.io/WEB_HTML/algoritm_task.html
