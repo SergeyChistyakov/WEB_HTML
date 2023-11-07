@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Расчет заполнения жидкостью</title>
+</head>
+<body>
+<h2>Введите значения:</h2>
+<p>Имеются две ёмкости: кубическая с ребром A, цилиндрическая с высотой H и радиусом основания R. Определить, можно ли заполнить жидкостью
+объёма M первую ёмкость, вторую, обе.</p>
+<p>Заполнятся ли обе емкости? Если да то отправить на сервер</p>
+<form action="https://www.bing.com/search?" id="UserEnter" name="UserEnter" target="_blank">
+    <p>для поисковика: <input name="q" value="search"></p>
+    <p>формулировка задачи <input name="formulation" value="Отправь на сервер если обе ёмкости заполненуы"></p>
+    <p for="numberA">Ребро куба (A):</p>
+    <input type="text" id="numberA"><br><br>
+    <label for="numberH">Высота цилиндрической ёмкости (H):</label>
+    <input type="text" id="numberH"><br><br>
+    <label for="numberR">Радиус основания цилиндрической ёмкости (R):</label>
+    <input type="text" id="numberR"><br><br>
+    <label for="numberM">Объем жидкости (M):</label>
+    <input type="text" id="numberM"><br><br>
+    <p style="display: none;">результат решения: <input name="result" value="не определен"></p>
+    <p>действие 1: <input type="button" value="Проверить" onclick="checkFill()"></p>
+    <p>действие 2: <input type="button" value="Отправить" onclick="send()"></p>
+</form>
+<p id="result"></p>
+<script>
+    function checkFill() {
+        var a = parseFloat(document.getElementById("numberA").value);
+        var h = parseFloat(document.getElementById("numberH").value);
+        var r = parseFloat(document.getElementById("numberR").value);
+        var m = parseFloat(document.getElementById("numberM").value);
+
+        var volumeA = Math.pow(a, 3);
+        var volumeH = Math.PI * Math.pow(r, 2) * h;
+
+        var result = "";
+
+        if (m >= volumeA && m >= volumeH) {
+            result = "Можно заполнить обе ёмкости";
+        } else if (m >= volumeA) {
+            result = "Можно заполнить только кубическую ёмкость";
+        } else if (m >= volumeH) {
+            result = "Можно заполнить только цилиндрическую ёмкость";
+        } else {
+            result = "Нельзя заполнить ни одну ёмкость";
+        }
+
+        document.getElementById("result").innerHTML = result;
+    }
+
+    function send(){
+    if (document.getElementById("result").innerText == "Можно заполнить обе ёмкости") {
+        let textCondition = document.getElementsByTagName('p')[0].innerText
+        document.getElementsByName('formulation')[0].value = textCondition;
+        document.getElementsByName('result')[0].value = result;
+        document.getElementById("UserEnter").submit();
+    }
+    }
+</script>
+
+</body>
+</html>
