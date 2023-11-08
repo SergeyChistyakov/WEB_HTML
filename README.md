@@ -10,6 +10,6 @@
 ### https://sergeychistyakov.github.io/WEB_HTML/algoritm_task.html
 ### https://sergeychistyakov.github.io/WEB_HTML/form_algo.html
 # Сайт по домашним работам  
-### https://sergeychistyakov.github.io/WEB_HTML/HW_SITE/major.html
+
 # Большой сайт
 ### https://sergeychistyakov.github.io/WEB_HTML/BIG_SITE/index.html
